@@ -2,7 +2,7 @@
 
 description="Monitor the Rpi GPIO for a x730 / x735 button press for reboot / shutdown."
 
-command="/usr/local/bin/x730-daemon.sh"
+command="/usr/bin/x730-daemon.sh"
 pidfile="/run/${RC_SVCNAME}.pid"
 command_background=true
 
