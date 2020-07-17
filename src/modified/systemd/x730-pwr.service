@@ -1,0 +1,9 @@
+[Unit]
+Description=Monitor the Rpi GPIO for a x730 / x735 button press for reboot / shutdown.
+
+[Service]
+ExecStart=/usr/bin/x730-daemon.sh
+Type=simple
+
+[Install]
+WantedBy=multi-user.target
