@@ -13,7 +13,7 @@ EGIT_COMMIT="0cf9a893d2f01b084e8c196b4c614c44ea6aa7bb"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="arm arm64"
-IUSE=""
+IUSE="systemd"
 
 src_install() {
 	# User run Script to trigger a shutdown
@@ -22,8 +22,8 @@ src_install() {
 	dobin "${WORKDIR}/${P}/src/modified/x730-daemon.sh"
 
 	# init scripts
-	newinitd "${WORKDIR}/${P}/src/modified/openrc/x730-pwr"
-	systemd_dounit "${FILESDIR}/x730-pwr.service"
+	newinitd "${WORKDIR}/${P}/src/modified/openrc/x730-pwr" x730-pwr
+	systemd_dounit "${WORKDIR}/${P}/src/modified/systemd/x730-pwr.service"
 }
 
 pkg_postinst() {
